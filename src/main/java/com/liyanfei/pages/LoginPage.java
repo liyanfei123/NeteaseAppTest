@@ -36,7 +36,7 @@ public class LoginPage {
         boxElement.click();
         // 点击登陆
         AndroidElement loginButton = FindElement.findElementByType(driver, "Id",
-                "e acom.netease.yanxuan:id/btn_login_content");
+                "com.netease.yanxuan:id/btn_login_content");
         loginButton.click();
         return new UserPage(driver);
     }
