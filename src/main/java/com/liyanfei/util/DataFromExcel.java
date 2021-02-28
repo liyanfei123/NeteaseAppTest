@@ -105,14 +105,15 @@ public class DataFromExcel {
 
     /**
      * 向指定的文件的指定单元格写入数据
-     * @param filePath 文件路径
+     * @param dir 文件目录
+     * @param file 文件名
      * @param sheetName 表名
      * @param rowNum 行号
      * @param colNum 列号
      * @param result 测试结果
      * @throws Exception
      */
-    public static void setCellData(String filePath, String sheetName, int rowNum, int colNum,
+    public static void setCellData(String dir, String file, String sheetName, int rowNum, int colNum,
                                    boolean result) throws Exception {
         try {
             readSheet(sheetName);
@@ -121,8 +122,9 @@ public class DataFromExcel {
                 cell = sheet.getRow(rowNum).createCell(colNum);
             }
             cell.setCellValue(result);
+            String filePath = dir + File.separator + file;
             book.write(new FileOutputStream(filePath));
-            logger.info("数据写入成功！");
+            logger.info("数据 " + result + " 写入成功！");
         } catch (Exception e) {
             logger.info("数据写入失败！");
             throw new Exception("数据写入发生错误");

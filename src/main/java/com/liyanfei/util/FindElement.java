@@ -71,7 +71,7 @@ public class FindElement {
             }
             return element;
         } catch (NoSuchElementException e) {
-            logger.info("控件为出现");
+            logger.info("控件未出现");
         }
         throw new NoSuchElementException("控件获取失败");
     }
@@ -137,7 +137,7 @@ public class FindElement {
             return (AndroidElement) AppiumDriverWait.until(ExpectedConditions
                     .presenceOfElementLocated(by));
         } catch (Exception e) {
-            e.printStackTrace();
+//            e.printStackTrace();
         }
         throw new NoSuchElementException("元素控件未出现");
     }

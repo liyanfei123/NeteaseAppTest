@@ -22,10 +22,10 @@ public class LoginPage {
         // 切换登陆方式
         AndroidElement changeElement = FindElement.findElementByType(driver, "Id",
                 "com.netease.yanxuan:id/btn_change_mode");
-        Actions.click(changeElement);
+        Actions.click(changeElement, null);
     }
 
-    public UserPage loginByPassword(String username, String password) throws ActionExpection {
+    public void inputInfo(String username, String password) throws ActionExpection {
         // 输入手机号
         AndroidElement usernameElement = FindElement.findElementByType(driver, "Id",
                 "com.netease.yanxuan:id/account_edit");
@@ -37,11 +37,14 @@ public class LoginPage {
         // 勾选 同意 条款
         AndroidElement boxElement = FindElement.findElementByType(driver, "Id",
                 "com.netease.yanxuan:id/check_box");
-        Actions.click(boxElement);
+        Actions.click(boxElement, null);
+    }
+
+    public UserPage clickLogin() throws ActionExpection {
         // 点击登陆
         AndroidElement loginButton = FindElement.findElementByType(driver, "Id",
                 "com.netease.yanxuan:id/btn_login_content");
-        Actions.click(loginButton);
+        Actions.click(loginButton, null);
         return new UserPage(driver);
     }
 
@@ -53,6 +56,11 @@ public class LoginPage {
      * @return boolean
      */
     public boolean verfiyFail(AndroidDriver<AndroidElement> driver, String expected) {
-        return Actions.toastVerfity(LoginPage.driver, expected);
+        try {
+            Actions.toastVerfity(LoginPage.driver, expected);
+            return true;
+        } catch (ActionExpection e) {
+            return false;
+        }
     }
 }

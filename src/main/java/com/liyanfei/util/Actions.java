@@ -26,7 +26,7 @@ public class Actions {
      * 实现元素的单击操作
      * @param element 待单击的元素
      */
-    public static void click(AndroidElement element) throws ActionExpection {
+    public static void click(AndroidElement element, String data) throws ActionExpection {
         try {
             element.click();
 //            logger.info("单击成功！");
@@ -52,11 +52,11 @@ public class Actions {
         try {
             if (data.toLowerCase().equals("yes")) {
                 if (!element.isSelected()) {
-                    click(element);
+                    click(element, null);
                 }
             } else if (data.toLowerCase().equals("no")) {
                 if (element.isSelected()) {
-                    click(element);
+                    click(element, null);
                 }
             }
         } catch (Exception e) {
@@ -72,7 +72,7 @@ public class Actions {
      */
     public static void input(AndroidElement element, String data) throws ActionExpection {
         try {
-            click(element);
+            click(element, null);
             element.clear();
             element.sendKeys(data);
         } catch (Exception e) {
@@ -123,18 +123,17 @@ public class Actions {
      * 根据给定的文本验证当前元素是否为所需要的元素
      * @param element 待判断元素
      * @param data 判断文本
-     * @return boolean
      */
-    public static boolean verfiy(AndroidElement element, String data) {
+    public static void verfiy(AndroidElement element, String data) throws ActionExpection{
         try {
             String actual = element.getAttribute("text");
             if (!actual.equals(data)) {
                 logger.info("验证数据失败");
-                return false;
+                throw new ActionExpection("验证数据失败");
             }
-            return true;
+//            return true;
         } catch (Exception e) {
-            return false;
+            throw new ActionExpection("验证数据发生异常");
         }
     }
 
@@ -144,17 +143,22 @@ public class Actions {
      * @param data 验证文本
      * @return
      */
-    public static boolean toastVerfity(AndroidDriver<AndroidElement> driver, String data) {
+    public static void toastVerfity(AndroidDriver<AndroidElement> driver, String data) throws ActionExpection {
         try {
             String value = "//*[@text='" + data + "']";
             AndroidElement element = FindElement.findElementByType(driver, "xpath",
                     value);
-            if (element != null && element.getAttribute("text").equals(data)) {
-                return true;
+            if (element != null && element.getAttribute("text").equals(data)) {}
+            else {
+                throw new ActionExpection("验证错误");
             }
-        } catch (Exception e) {}
-        return false;
+        } catch (Exception e) {
+            throw new ActionExpection("验证发生异常");
+        }
+//        return false;
+
     }
+
 
     /**
      * 判断app跳转是否成功，通过activity来判断
@@ -162,7 +166,7 @@ public class Actions {
      * @return
      * @throws InterruptedException
      */
-    public static boolean loadingActivity(String data) throws InterruptedException {
+    public static void loadingActivity(AndroidDriver<AndroidElement> driver, String data) throws ActionExpection, InterruptedException {
         logger.info("当前活动页面activity为：" + driver.currentActivity());
         int count = Settings.activityControl.activityInspectCount;
         int interval = Settings.activityControl.activityInspectInterval;
@@ -172,7 +176,7 @@ public class Actions {
             try {
                 if (data.contains(driver.currentActivity())) {
                     logger.info(data + "出现");
-                    return true;
+                    break;
                 } else {
                     logger.info(data + "暂未出现！Waiting...");
                     Thread.sleep(interval);
@@ -182,16 +186,24 @@ public class Actions {
                 i++;
             }
         }
-        return false;
+        throw new ActionExpection("验证发生意外");
     }
 
     /**
      * 模拟按下确认搜索等
-     * @param driver 驱动
      * @throws Exception
      */
-    public static void pressEnter(AndroidDriver<AndroidElement> driver) throws Exception {
-        driver.pressKey(new KeyEvent(AndroidKey.ENTER));
+    public static void pressEnter(AndroidDriver<AndroidElement> driver, AndroidElement element) throws ActionExpection {
+        try {
+            // 切换本地输入法，确保搜索可以成功
+            Runtime runtime = Runtime.getRuntime();
+            Process proc = runtime.exec("adb shell ime set com.sohu.inputmethod.sogou/.SogouIME");
+            Actions.click(element, null);
+            driver.pressKey(new KeyEvent(AndroidKey.ENTER));
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new ActionExpection("按键发生异常！");
+        }
     }
 
 }

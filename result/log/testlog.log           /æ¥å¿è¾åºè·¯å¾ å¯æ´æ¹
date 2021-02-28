@@ -1,2 +1,337 @@
-2021-02-28 00:00:02  [ main:59465 ] - [ INFO ]  切换为 使用密码登陆
-2021-02-28 00:00:02  [ main:59577 ] - [ INFO ]  输入手机:15806891234, 和密码:123456
+2021-03-01 00:05:08  [ main:0 ] - [ INFO ]  ----------测试用例开始执行----------
+2021-03-01 00:05:23  [ main:14958 ] - [ INFO ]  文件 AllTestCase.xlsx 中，总的测试用例数：1
+2021-03-01 00:05:23  [ main:14965 ] - [ INFO ]  运行测试用例: share; 测试用例的详细信息: 完成商品的虚假分享，不应提示分享成功
+2021-03-01 00:05:23  [ main:14966 ] - [ INFO ]  测试用例: share, 总测试步骤数为: 8
+2021-03-01 00:05:23  [ main:14971 ] - [ INFO ]  当前测试步骤: 单击搜索框
+2021-03-01 00:05:23  [ main:14973 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/iv_home_search_icon
+2021-03-01 00:05:24  [ main:15552 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/iv_home_search_icon; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:05:24  [ main:15660 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:05:24  [ main:15920 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:05:24  [ main:15921 ] - [ INFO ]  测试步骤: 单击搜索框 成功！
+2021-03-01 00:05:24  [ main:15923 ] - [ INFO ]  当前测试步骤: 等待跳转
+2021-03-01 00:05:24  [ main:15923 ] - [ INFO ]  执行测试步骤  识别方式: null; 操作: loadingActivity; 测试数据: .SearchActivity
+属于测试用例: share
+2021-03-01 00:05:24  [ main:15925 ] - [ INFO ]  测试步骤: 等待跳转 成功！
+2021-03-01 00:05:24  [ main:15926 ] - [ INFO ]  当前测试步骤: 输入商品
+2021-03-01 00:05:24  [ main:15929 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/search_input
+2021-03-01 00:05:25  [ main:16836 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/search_input; 操作: input; 测试数据: 黑猪肉
+属于测试用例: share
+2021-03-01 00:05:27  [ main:18615 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:05:27  [ main:18666 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:05:27  [ main:18667 ] - [ INFO ]  测试步骤: 输入商品 成功！
+2021-03-01 00:05:27  [ main:18669 ] - [ INFO ]  当前测试步骤: 确认搜索
+2021-03-01 00:05:27  [ main:18670 ] - [ INFO ]  执行测试步骤  识别方式: null; 操作: Enter; 测试数据: null
+属于测试用例: share
+2021-03-01 00:05:29  [ main:21187 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:05:29  [ main:21242 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:05:29  [ main:21243 ] - [ INFO ]  测试步骤: 确认搜索 成功！
+2021-03-01 00:05:29  [ main:21244 ] - [ INFO ]  当前测试步骤: 单击第一件商品
+2021-03-01 00:05:29  [ main:21244 ] - [ INFO ]  依据 xpath 查找控件，定位信息: //android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.ImageView[1]
+2021-03-01 00:05:31  [ main:22924 ] - [ INFO ]  执行测试步骤  识别方式: //android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.ImageView[1]; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:05:31  [ main:23031 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:05:31  [ main:23071 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:05:31  [ main:23072 ] - [ INFO ]  测试步骤: 单击第一件商品 成功！
+2021-03-01 00:05:31  [ main:23074 ] - [ INFO ]  当前测试步骤: 单击分享
+2021-03-01 00:05:31  [ main:23079 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/share_btn
+2021-03-01 00:05:34  [ main:26125 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/share_btn; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:05:35  [ main:26697 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:05:35  [ main:26729 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:05:35  [ main:26729 ] - [ INFO ]  测试步骤: 单击分享 成功！
+2021-03-01 00:05:35  [ main:26730 ] - [ INFO ]  当前测试步骤: 单击取消
+2021-03-01 00:05:35  [ main:26730 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/btn_cancel_share
+2021-03-01 00:05:36  [ main:28140 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/btn_cancel_share; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:05:36  [ main:28204 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:05:36  [ main:28245 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:05:36  [ main:28245 ] - [ INFO ]  测试步骤: 单击取消 成功！
+2021-03-01 00:05:36  [ main:28246 ] - [ INFO ]  当前测试步骤: 验证反馈信息
+2021-03-01 00:05:36  [ main:28247 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/btn_lottery
+2021-03-01 00:05:47  [ main:38447 ] - [ INFO ]  控件未出现
+2021-03-01 00:08:38  [ main:0 ] - [ INFO ]  ----------测试用例开始执行----------
+2021-03-01 00:08:51  [ main:13703 ] - [ INFO ]  文件 AllTestCase.xlsx 中，总的测试用例数：1
+2021-03-01 00:08:51  [ main:13712 ] - [ INFO ]  运行测试用例: share; 测试用例的详细信息: 完成商品的虚假分享，不应提示分享成功
+2021-03-01 00:08:51  [ main:13712 ] - [ INFO ]  测试用例: share, 总测试步骤数为: 7
+2021-03-01 00:08:51  [ main:13717 ] - [ INFO ]  当前测试步骤: 单击搜索框
+2021-03-01 00:08:51  [ main:13721 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/iv_home_search_icon
+2021-03-01 00:08:52  [ main:14094 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/iv_home_search_icon; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:08:52  [ main:14180 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:08:52  [ main:14427 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:08:52  [ main:14428 ] - [ INFO ]  测试步骤: 单击搜索框 成功！
+2021-03-01 00:08:52  [ main:14430 ] - [ INFO ]  当前测试步骤: 输入商品
+2021-03-01 00:08:52  [ main:14430 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/search_input
+2021-03-01 00:08:53  [ main:15427 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/search_input; 操作: input; 测试数据: 黑猪肉
+属于测试用例: share
+2021-03-01 00:08:55  [ main:17171 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:08:55  [ main:17236 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:08:55  [ main:17237 ] - [ INFO ]  测试步骤: 输入商品 成功！
+2021-03-01 00:08:55  [ main:17241 ] - [ INFO ]  当前测试步骤: 确认搜索
+2021-03-01 00:08:55  [ main:17244 ] - [ INFO ]  执行测试步骤  识别方式: null; 操作: Enter; 测试数据: null
+属于测试用例: share
+2021-03-01 00:08:57  [ main:19759 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:08:57  [ main:19807 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:08:57  [ main:19807 ] - [ INFO ]  测试步骤: 确认搜索 成功！
+2021-03-01 00:08:57  [ main:19809 ] - [ INFO ]  当前测试步骤: 单击第一件商品
+2021-03-01 00:08:57  [ main:19818 ] - [ INFO ]  依据 xpath 查找控件，定位信息: //android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.ImageView[1]
+2021-03-01 00:08:59  [ main:21652 ] - [ INFO ]  执行测试步骤  识别方式: //android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.ImageView[1]; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:08:59  [ main:21734 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:08:59  [ main:21796 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:08:59  [ main:21797 ] - [ INFO ]  测试步骤: 单击第一件商品 成功！
+2021-03-01 00:08:59  [ main:21799 ] - [ INFO ]  当前测试步骤: 单击分享
+2021-03-01 00:08:59  [ main:21799 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/share_btn
+2021-03-01 00:09:02  [ main:24753 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/share_btn; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:09:02  [ main:24814 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:09:03  [ main:24859 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:09:03  [ main:24860 ] - [ INFO ]  测试步骤: 单击分享 成功！
+2021-03-01 00:09:03  [ main:24863 ] - [ INFO ]  当前测试步骤: 单击取消
+2021-03-01 00:09:03  [ main:24866 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/btn_cancel_share
+2021-03-01 00:09:04  [ main:26341 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/btn_cancel_share; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:09:04  [ main:26424 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:09:04  [ main:26467 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:09:04  [ main:26468 ] - [ INFO ]  测试步骤: 单击取消 成功！
+2021-03-01 00:09:04  [ main:26468 ] - [ INFO ]  当前测试步骤: 验证反馈信息
+2021-03-01 00:09:04  [ main:26469 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/btn_lottery
+2021-03-01 00:09:14  [ main:36508 ] - [ INFO ]  控件未出现
+2021-03-01 00:16:12  [ main:0 ] - [ INFO ]  ----------测试用例开始执行----------
+2021-03-01 00:16:27  [ main:15711 ] - [ INFO ]  文件 AllTestCase.xlsx 中，总的测试用例数：1
+2021-03-01 00:16:27  [ main:15718 ] - [ INFO ]  运行测试用例: share; 测试用例的详细信息: 完成商品的虚假分享，不应提示分享成功
+2021-03-01 00:16:27  [ main:15720 ] - [ INFO ]  测试用例: share, 总测试步骤数为: 7
+2021-03-01 00:16:27  [ main:15722 ] - [ INFO ]  当前测试步骤: 单击搜索框
+2021-03-01 00:16:27  [ main:15723 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/iv_home_search_icon
+2021-03-01 00:16:28  [ main:16337 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/iv_home_search_icon; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:16:28  [ main:16430 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:16:28  [ main:16677 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:16:28  [ main:16678 ] - [ INFO ]  测试步骤: 单击搜索框 成功！
+2021-03-01 00:16:28  [ main:16679 ] - [ INFO ]  当前测试步骤: 输入商品
+2021-03-01 00:16:28  [ main:16680 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/search_input
+2021-03-01 00:16:29  [ main:17703 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/search_input; 操作: input; 测试数据: 黑猪肉
+属于测试用例: share
+2021-03-01 00:16:31  [ main:19471 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:16:31  [ main:19534 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:16:31  [ main:19535 ] - [ INFO ]  测试步骤: 输入商品 成功！
+2021-03-01 00:16:31  [ main:19539 ] - [ INFO ]  当前测试步骤: 确认搜索
+2021-03-01 00:16:31  [ main:19540 ] - [ INFO ]  执行测试步骤  识别方式: null; 操作: Enter; 测试数据: null
+属于测试用例: share
+2021-03-01 00:16:33  [ main:21240 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:16:33  [ main:21297 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:16:33  [ main:21297 ] - [ INFO ]  测试步骤: 确认搜索 成功！
+2021-03-01 00:16:33  [ main:21299 ] - [ INFO ]  当前测试步骤: 单击第一件商品
+2021-03-01 00:16:33  [ main:21300 ] - [ INFO ]  依据 xpath 查找控件，定位信息: //android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.ImageView[1]
+2021-03-01 00:16:35  [ main:22978 ] - [ INFO ]  执行测试步骤  识别方式: //android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.ImageView[1]; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:16:35  [ main:23083 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:16:35  [ main:23141 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:16:35  [ main:23142 ] - [ INFO ]  测试步骤: 单击第一件商品 成功！
+2021-03-01 00:16:35  [ main:23143 ] - [ INFO ]  当前测试步骤: 单击分享
+2021-03-01 00:16:35  [ main:23143 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/share_btn
+2021-03-01 00:16:38  [ main:26071 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/share_btn; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:16:38  [ main:26653 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:16:38  [ main:26702 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:16:38  [ main:26703 ] - [ INFO ]  测试步骤: 单击分享 成功！
+2021-03-01 00:16:38  [ main:26705 ] - [ INFO ]  当前测试步骤: 单击取消
+2021-03-01 00:16:38  [ main:26706 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/btn_cancel_share
+2021-03-01 00:16:40  [ main:28058 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/btn_cancel_share; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:16:40  [ main:28122 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:16:40  [ main:28159 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:16:40  [ main:28159 ] - [ INFO ]  测试步骤: 单击取消 成功！
+2021-03-01 00:16:40  [ main:28160 ] - [ INFO ]  当前测试步骤: 验证反馈信息
+2021-03-01 00:16:40  [ main:28160 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/btn_lottery
+2021-03-01 00:16:50  [ main:38881 ] - [ INFO ]  控件未出现
+2021-03-01 00:18:12  [ main:0 ] - [ INFO ]  ----------测试用例开始执行----------
+2021-03-01 00:18:26  [ main:13889 ] - [ INFO ]  文件 AllTestCase.xlsx 中，总的测试用例数：1
+2021-03-01 00:18:26  [ main:13896 ] - [ INFO ]  运行测试用例: share; 测试用例的详细信息: 完成商品的虚假分享，不应提示分享成功
+2021-03-01 00:18:26  [ main:13898 ] - [ INFO ]  测试用例: share, 总测试步骤数为: 7
+2021-03-01 00:18:26  [ main:13901 ] - [ INFO ]  当前测试步骤: 单击搜索框
+2021-03-01 00:18:26  [ main:13903 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/iv_home_search_icon
+2021-03-01 00:18:27  [ main:14245 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/iv_home_search_icon; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:18:27  [ main:14316 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:18:27  [ main:14619 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:18:27  [ main:14620 ] - [ INFO ]  测试步骤: 单击搜索框 成功！
+2021-03-01 00:18:27  [ main:14621 ] - [ INFO ]  当前测试步骤: 输入商品
+2021-03-01 00:18:27  [ main:14622 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/search_input
+2021-03-01 00:18:28  [ main:15506 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/search_input; 操作: input; 测试数据: 黑猪肉
+属于测试用例: share
+2021-03-01 00:18:30  [ main:17252 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:18:30  [ main:17319 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:18:30  [ main:17320 ] - [ INFO ]  测试步骤: 输入商品 成功！
+2021-03-01 00:18:30  [ main:17324 ] - [ INFO ]  当前测试步骤: 确认搜索
+2021-03-01 00:18:30  [ main:17325 ] - [ INFO ]  执行测试步骤  识别方式: null; 操作: Enter; 测试数据: null
+属于测试用例: share
+2021-03-01 00:18:32  [ main:19822 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:18:32  [ main:19878 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:18:32  [ main:19878 ] - [ INFO ]  测试步骤: 确认搜索 成功！
+2021-03-01 00:18:32  [ main:19880 ] - [ INFO ]  当前测试步骤: 单击第一件商品
+2021-03-01 00:18:32  [ main:19881 ] - [ INFO ]  依据 xpath 查找控件，定位信息: //android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.ImageView[1]
+2021-03-01 00:18:34  [ main:21621 ] - [ INFO ]  执行测试步骤  识别方式: //android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.ImageView[1]; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:18:34  [ main:21720 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:18:34  [ main:21766 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:18:34  [ main:21767 ] - [ INFO ]  测试步骤: 单击第一件商品 成功！
+2021-03-01 00:18:34  [ main:21768 ] - [ INFO ]  当前测试步骤: 单击分享
+2021-03-01 00:18:34  [ main:21769 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/share_btn
+2021-03-01 00:18:37  [ main:24770 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/share_btn; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:18:37  [ main:24850 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:18:37  [ main:24893 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:18:37  [ main:24894 ] - [ INFO ]  测试步骤: 单击分享 成功！
+2021-03-01 00:18:37  [ main:24897 ] - [ INFO ]  当前测试步骤: 单击取消
+2021-03-01 00:18:37  [ main:24897 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/btn_cancel_share
+2021-03-01 00:18:39  [ main:26269 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/btn_cancel_share; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:18:39  [ main:26359 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:18:39  [ main:26398 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:18:39  [ main:26398 ] - [ INFO ]  测试步骤: 单击取消 成功！
+2021-03-01 00:18:39  [ main:26400 ] - [ INFO ]  当前测试步骤: 验证反馈信息
+2021-03-01 00:18:39  [ main:26401 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/btn_lottery
+2021-03-01 00:18:50  [ main:37239 ] - [ INFO ]  控件未出现
+2021-03-01 00:18:50  [ main:37261 ] - [ INFO ]  数据 false 写入成功！
+2021-03-01 00:25:18  [ main:0 ] - [ INFO ]  ----------测试用例开始执行----------
+2021-03-01 00:25:31  [ main:13651 ] - [ INFO ]  文件 AllTestCase.xlsx 中，总的测试用例数：1
+2021-03-01 00:25:31  [ main:13660 ] - [ INFO ]  运行测试用例: share; 测试用例的详细信息: 完成商品的虚假分享，不应提示分享成功
+2021-03-01 00:25:31  [ main:13661 ] - [ INFO ]  测试用例: share, 总测试步骤数为: 7
+2021-03-01 00:25:31  [ main:13663 ] - [ INFO ]  当前测试步骤: 单击搜索框
+2021-03-01 00:25:31  [ main:13674 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/iv_home_search_icon; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:25:31  [ main:13675 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/iv_home_search_icon
+2021-03-01 00:25:32  [ main:14101 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:25:32  [ main:14348 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:25:32  [ main:14349 ] - [ INFO ]  测试步骤: 单击搜索框 成功！
+2021-03-01 00:25:32  [ main:14350 ] - [ INFO ]  当前测试步骤: 输入商品
+2021-03-01 00:25:32  [ main:14351 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/search_input; 操作: input; 测试数据: 黑猪肉
+属于测试用例: share
+2021-03-01 00:25:32  [ main:14352 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/search_input
+2021-03-01 00:25:35  [ main:17473 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:25:35  [ main:17537 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:25:35  [ main:17537 ] - [ INFO ]  测试步骤: 输入商品 成功！
+2021-03-01 00:25:35  [ main:17540 ] - [ INFO ]  当前测试步骤: 确认搜索
+2021-03-01 00:25:35  [ main:17541 ] - [ INFO ]  执行测试步骤  识别方式: null; 操作: Enter; 测试数据: null
+属于测试用例: share
+2021-03-01 00:25:35  [ main:17541 ] - [ INFO ]  测试步骤: 确认搜索 成功！
+2021-03-01 00:25:35  [ main:17541 ] - [ INFO ]  当前测试步骤: 单击第一件商品
+2021-03-01 00:25:35  [ main:17543 ] - [ INFO ]  执行测试步骤  识别方式: //android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.ImageView[1]; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:25:35  [ main:17543 ] - [ INFO ]  依据 xpath 查找控件，定位信息: //android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.ImageView[1]
+2021-03-01 00:25:46  [ main:28116 ] - [ INFO ]  控件未出现
+2021-03-01 00:25:46  [ main:28155 ] - [ INFO ]  数据 false 写入成功！
+2021-03-01 00:26:02  [ main:0 ] - [ INFO ]  ----------测试用例开始执行----------
+2021-03-01 00:26:16  [ main:13398 ] - [ INFO ]  文件 AllTestCase.xlsx 中，总的测试用例数：1
+2021-03-01 00:26:16  [ main:13406 ] - [ INFO ]  运行测试用例: share; 测试用例的详细信息: 完成商品的虚假分享，不应提示分享成功
+2021-03-01 00:26:16  [ main:13407 ] - [ INFO ]  测试用例: share, 总测试步骤数为: 7
+2021-03-01 00:26:16  [ main:13410 ] - [ INFO ]  当前测试步骤: 单击搜索框
+2021-03-01 00:26:16  [ main:13424 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/iv_home_search_icon; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:26:16  [ main:13425 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/iv_home_search_icon
+2021-03-01 00:26:16  [ main:14060 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:26:17  [ main:14313 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:26:17  [ main:14314 ] - [ INFO ]  测试步骤: 单击搜索框 成功！
+2021-03-01 00:26:17  [ main:14317 ] - [ INFO ]  当前测试步骤: 输入商品
+2021-03-01 00:26:17  [ main:14318 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/search_input; 操作: input; 测试数据: 黑猪肉
+属于测试用例: share
+2021-03-01 00:26:17  [ main:14319 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/search_input
+2021-03-01 00:26:19  [ main:17077 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:26:20  [ main:17135 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:26:20  [ main:17135 ] - [ INFO ]  测试步骤: 输入商品 成功！
+2021-03-01 00:26:20  [ main:17139 ] - [ INFO ]  当前测试步骤: 确认搜索
+2021-03-01 00:26:20  [ main:17140 ] - [ INFO ]  执行测试步骤  识别方式: null; 操作: Enter; 测试数据: null
+属于测试用例: share
+2021-03-01 00:26:20  [ main:17140 ] - [ INFO ]  测试步骤: 确认搜索 成功！
+2021-03-01 00:26:20  [ main:17141 ] - [ INFO ]  当前测试步骤: 单击第一件商品
+2021-03-01 00:26:20  [ main:17143 ] - [ INFO ]  执行测试步骤  识别方式: //android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.ImageView[1]; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:26:20  [ main:17143 ] - [ INFO ]  依据 xpath 查找控件，定位信息: //android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.ImageView[1]
+2021-03-01 00:26:30  [ main:27753 ] - [ INFO ]  控件未出现
+2021-03-01 00:26:30  [ main:27800 ] - [ INFO ]  数据 false 写入成功！
+2021-03-01 00:28:21  [ main:0 ] - [ INFO ]  ----------测试用例开始执行----------
+2021-03-01 00:29:19  [ main:0 ] - [ INFO ]  ----------测试用例开始执行----------
+2021-03-01 00:29:42  [ main:23348 ] - [ INFO ]  控件未出现
+2021-03-01 00:29:55  [ main:0 ] - [ INFO ]  ----------测试用例开始执行----------
+2021-03-01 00:30:18  [ main:23087 ] - [ INFO ]  控件未出现
+2021-03-01 00:30:37  [ main:0 ] - [ INFO ]  ----------测试用例开始执行----------
+2021-03-01 00:30:51  [ main:13675 ] - [ INFO ]  文件 AllTestCase.xlsx 中，总的测试用例数：1
+2021-03-01 00:30:51  [ main:13683 ] - [ INFO ]  运行测试用例: share; 测试用例的详细信息: 完成商品的虚假分享，不应提示分享成功
+2021-03-01 00:30:51  [ main:13685 ] - [ INFO ]  测试用例: share, 总测试步骤数为: 7
+2021-03-01 00:30:53  [ main:15701 ] - [ INFO ]  当前测试步骤: 单击搜索框
+2021-03-01 00:30:53  [ main:15731 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/iv_home_search_icon; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:30:53  [ main:15732 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/iv_home_search_icon
+2021-03-01 00:30:54  [ main:16142 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:30:54  [ main:16414 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:30:54  [ main:16415 ] - [ INFO ]  测试步骤: 单击搜索框 成功！
+2021-03-01 00:30:56  [ main:18428 ] - [ INFO ]  当前测试步骤: 输入商品
+2021-03-01 00:30:56  [ main:18432 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/search_input; 操作: input; 测试数据: 黑猪肉
+属于测试用例: share
+2021-03-01 00:30:56  [ main:18434 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/search_input
+2021-03-01 00:30:58  [ main:20329 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:30:58  [ main:20402 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:30:58  [ main:20403 ] - [ INFO ]  测试步骤: 输入商品 成功！
+2021-03-01 00:31:00  [ main:22417 ] - [ INFO ]  当前测试步骤: 确认搜索
+2021-03-01 00:31:00  [ main:22420 ] - [ INFO ]  执行测试步骤  识别方式: null; 操作: Enter; 测试数据: null
+属于测试用例: share
+2021-03-01 00:31:00  [ main:22421 ] - [ INFO ]  测试步骤: 确认搜索 成功！
+2021-03-01 00:31:02  [ main:24431 ] - [ INFO ]  当前测试步骤: 单击第一件商品
+2021-03-01 00:31:02  [ main:24435 ] - [ INFO ]  执行测试步骤  识别方式: //android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.ImageView[1]; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:31:02  [ main:24436 ] - [ INFO ]  依据 xpath 查找控件，定位信息: //android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.ImageView[1]
+2021-03-01 00:31:12  [ main:34788 ] - [ INFO ]  控件未出现
+2021-03-01 00:31:12  [ main:34846 ] - [ INFO ]  数据 false 写入成功！
+2021-03-01 00:36:50  [ main:0 ] - [ INFO ]  ----------测试用例开始执行----------
+2021-03-01 00:37:04  [ main:13692 ] - [ INFO ]  文件 AllTestCase.xlsx 中，总的测试用例数：1
+2021-03-01 00:37:04  [ main:13698 ] - [ INFO ]  运行测试用例: share; 测试用例的详细信息: 完成商品的虚假分享，不应提示分享成功
+2021-03-01 00:37:04  [ main:13698 ] - [ INFO ]  测试用例: share, 总测试步骤数为: 7
+2021-03-01 00:37:04  [ main:13707 ] - [ INFO ]  当前测试步骤: 单击搜索框
+2021-03-01 00:37:04  [ main:13719 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/iv_home_search_icon; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:37:04  [ main:13720 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/iv_home_search_icon
+2021-03-01 00:37:04  [ main:14283 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:37:05  [ main:14552 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:37:05  [ main:14553 ] - [ INFO ]  测试步骤: 单击搜索框 成功！
+2021-03-01 00:37:05  [ main:14555 ] - [ INFO ]  当前测试步骤: 输入商品
+2021-03-01 00:37:05  [ main:14556 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/search_input; 操作: input; 测试数据: 黑猪肉
+属于测试用例: share
+2021-03-01 00:37:05  [ main:14557 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/search_input
+2021-03-01 00:37:07  [ main:17208 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:37:07  [ main:17275 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:37:07  [ main:17276 ] - [ INFO ]  测试步骤: 输入商品 成功！
+2021-03-01 00:37:07  [ main:17279 ] - [ INFO ]  当前测试步骤: 确认搜索
+2021-03-01 00:37:07  [ main:17282 ] - [ INFO ]  执行测试步骤  识别方式: null; 操作: Enter; 测试数据: null
+属于测试用例: share
+2021-03-01 00:37:10  [ main:19799 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:37:10  [ main:19859 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:37:10  [ main:19859 ] - [ INFO ]  测试步骤: 确认搜索 成功！
+2021-03-01 00:37:10  [ main:19860 ] - [ INFO ]  当前测试步骤: 单击第一件商品
+2021-03-01 00:37:10  [ main:19861 ] - [ INFO ]  执行测试步骤  识别方式: //android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.ImageView[1]; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:37:10  [ main:19862 ] - [ INFO ]  依据 xpath 查找控件，定位信息: //android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.ImageView[1]
+2021-03-01 00:37:12  [ main:21669 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:37:12  [ main:21744 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:37:12  [ main:21745 ] - [ INFO ]  测试步骤: 单击第一件商品 成功！
+2021-03-01 00:37:12  [ main:21746 ] - [ INFO ]  当前测试步骤: 单击分享
+2021-03-01 00:37:12  [ main:21746 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/share_btn; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:37:12  [ main:21747 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/share_btn
+2021-03-01 00:37:15  [ main:24757 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:37:15  [ main:24820 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:37:15  [ main:24820 ] - [ INFO ]  测试步骤: 单击分享 成功！
+2021-03-01 00:37:15  [ main:24824 ] - [ INFO ]  当前测试步骤: 单击取消
+2021-03-01 00:37:15  [ main:24825 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/btn_cancel_share; 操作: click; 测试数据: null
+属于测试用例: share
+2021-03-01 00:37:15  [ main:24825 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/btn_cancel_share
+2021-03-01 00:37:16  [ main:26335 ] - [ INFO ]  测试步骤执行成功
+2021-03-01 00:37:16  [ main:26372 ] - [ INFO ]  数据 true 写入成功！
+2021-03-01 00:37:16  [ main:26372 ] - [ INFO ]  测试步骤: 单击取消 成功！
+2021-03-01 00:37:16  [ main:26372 ] - [ INFO ]  当前测试步骤: 验证反馈信息
+2021-03-01 00:37:16  [ main:26373 ] - [ INFO ]  执行测试步骤  识别方式: com.netease.yanxuan:id/btn_lottery; 操作: click; 测试数据: 分享成功! 点我抽奖
+属于测试用例: share
+2021-03-01 00:37:16  [ main:26373 ] - [ INFO ]  依据 id 查找控件，定位信息: com.netease.yanxuan:id/btn_lottery
+2021-03-01 00:37:27  [ main:36775 ] - [ INFO ]  控件未出现
+2021-03-01 00:37:27  [ main:36804 ] - [ INFO ]  数据 false 写入成功！

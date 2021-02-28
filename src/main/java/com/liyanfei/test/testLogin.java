@@ -30,8 +30,21 @@ public class testLogin extends BaseActivity {
         logger.info("切换为 使用密码登陆");
         loginPage.changeLoginWay(getDriver());
         logger.info("输入手机:" + data.get("telephone") + ", 和密码:" + data.get("password"));
-        loginPage.loginByPassword(data.get("telephone"), data.get("password"));
-        Assert.assertTrue(loginPage.verfiyFail(getDriver(), data.get("expected")));
+        loginPage.inputInfo(data.get("telephone"), data.get("password"));
+        // 由于Toast框显示有时间限制，故尝试三次判断
+        boolean flag = false;
+        for (int i = 0; i < 3; i++) {
+            try {
+                loginPage.clickLogin();
+                flag = loginPage.verfiyFail(getDriver(), data.get("expected"));
+                if (flag) {
+                    break;
+                }
+            } catch (Exception e) {
+                continue;
+            }
+        }
+        Assert.assertTrue(flag);
     }
 
     @DataProvider(name = "loginData")
