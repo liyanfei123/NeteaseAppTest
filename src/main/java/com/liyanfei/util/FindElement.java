@@ -67,7 +67,7 @@ public class FindElement {
                     });
                     break;
                 default:
-                    throw new IllegalStateException("Unexpected type: " + locatedType);
+                    throw new NoSuchElementException("Unexpected type: " + locatedType);
             }
             return element;
         } catch (NoSuchElementException e) {
@@ -85,7 +85,7 @@ public class FindElement {
      * @throws NoSuchElementException 元素未找到
      */
     public static List<AndroidElement> findElementsByType(AndroidDriver<AndroidElement> driver,
-                                                          String locatedType, String locatedInfo) throws NoSuchElementException {
+                                 String locatedType, String locatedInfo) throws NoSuchElementException {
         // 判断是否有该元素出现
         try {
             findElementByType(driver, locatedType, locatedInfo);
@@ -125,6 +125,7 @@ public class FindElement {
         }
         throw new NoSuchElementException("控件获取失败");
     }
+
     /**
      * Selenium方法等待元素出现
      * @param driver 驱动

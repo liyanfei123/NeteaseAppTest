@@ -57,7 +57,7 @@ public class LoginPage {
      */
     public boolean verfiyFail(AndroidDriver<AndroidElement> driver, String expected) {
         try {
-            Actions.toastVerfity(LoginPage.driver, expected);
+            Actions.toastVerfity(null, expected);
             return true;
         } catch (ActionExpection e) {
             return false;

@@ -10,6 +10,7 @@ import java.util.HashMap;
 public class HomePage {
     public static Logger logger = Logger.getLogger(HomePage.class.getName());
     public static AndroidDriver<AndroidElement> driver;
+    public static AndroidElement element;
 
     public HomePage(AndroidDriver<AndroidElement> driver) {
         this.driver = driver;
@@ -21,9 +22,19 @@ public class HomePage {
      */
     public LoginPage loginPage() {
         logger.info("从主页进入用户登陆页");
-        AndroidElement element = FindElement.findElementByType(driver, "Xpath",
+        element = FindElement.findElementByType(driver, "Xpath",
                 "//android.widget.TabWidget/android.view.ViewGroup[5]");
         element.click();
         return new LoginPage(driver);
+    }
+
+    public CommodityPage searchShop(String commodityName) {
+        logger.info("搜索商品");
+        element = FindElement.findElementByType(driver, "id",
+                "com.netease.yanxuan:id/iv_home_search_icon");
+        element.click();
+        element.clear();
+        element.sendKeys(commodityName);
+        return new CommodityPage(driver);
     }
 }

@@ -5,15 +5,14 @@ import com.liyanfei.util.*;
 import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidElement;
 import org.apache.log4j.Logger;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import org.openqa.selenium.NoSuchElementException;
 
-public class testShare extends BaseActivity {
-    public static Logger logger = Logger.getLogger(testShare.class.getName());
+public class keyWordTest extends BaseActivity {
+    public static Logger logger = Logger.getLogger(keyWordTest.class.getName());
 
     public static String locatedType;
     public static String inspector;

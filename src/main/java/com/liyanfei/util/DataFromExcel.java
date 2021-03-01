@@ -124,9 +124,9 @@ public class DataFromExcel {
             cell.setCellValue(result);
             String filePath = dir + File.separator + file;
             book.write(new FileOutputStream(filePath));
-            logger.info("数据 " + result + " 写入成功！");
+//            logger.info("数据 " + result + " 写入成功！");
         } catch (Exception e) {
-            logger.info("数据写入失败！");
+//            logger.info("数据写入失败！");
             throw new Exception("数据写入发生错误");
         }
     }

@@ -1,2 +1,6 @@
-package com.liyanfei.test;public class shopTest {
+package com.liyanfei.test;
+
+import com.liyanfei.base.BaseActivity;
+
+public class shopTest extends BaseActivity {
 }

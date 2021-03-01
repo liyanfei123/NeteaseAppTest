@@ -41,7 +41,6 @@ public class Actions {
         }
     }
 
-
     /**
      * 根据传入的数据判断单选框是否需要选择
      * @param element 单选框
@@ -119,12 +118,20 @@ public class Actions {
     }
 
 
+    public static void sleep(AndroidElement element, String data) throws ActionExpection {
+        try {
+            Thread.sleep(3 * 1000);
+        }catch (Exception e) {
+            throw new ActionExpection("等待出错！");
+        }
+    }
+
     /**
      * 根据给定的文本验证当前元素是否为所需要的元素
      * @param element 待判断元素
      * @param data 判断文本
      */
-    public static void verfiy(AndroidElement element, String data) throws ActionExpection{
+    public static void testVerfiy(AndroidElement element, String data) throws ActionExpection{
         try {
             String actual = element.getAttribute("text");
             if (!actual.equals(data)) {
@@ -137,16 +144,28 @@ public class Actions {
         }
     }
 
+    public static void selectedVerfity(AndroidElement element, String data) throws ActionExpection{
+        try {
+            boolean flag = Boolean.valueOf(data).booleanValue();
+            if (element.isSelected() != flag) {
+                throw new ActionExpection("是否选中验证失败");
+            }
+        } catch (Exception e) {
+//            e.printStackTrace();
+            throw new ActionExpection("验证是否选中发生异常");
+        }
+    }
+
     /**
      * Toast消息验证
-     * @param driver 驱动
+     * @param element 控件元素，无实际意义，为代码的完整性
      * @param data 验证文本
      * @return
      */
-    public static void toastVerfity(AndroidDriver<AndroidElement> driver, String data) throws ActionExpection {
+    public static void toastVerfity(AndroidElement element, String data) throws ActionExpection {
         try {
             String value = "//*[@text='" + data + "']";
-            AndroidElement element = FindElement.findElementByType(driver, "xpath",
+            element = FindElement.findElementByType(driver, "xpath",
                     value);
             if (element != null && element.getAttribute("text").equals(data)) {}
             else {
@@ -156,7 +175,6 @@ public class Actions {
             throw new ActionExpection("验证发生异常");
         }
 //        return false;
-
     }
 
 
