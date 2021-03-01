@@ -2,15 +2,15 @@ package com.liyanfei.test;
 
 import com.liyanfei.base.BaseActivity;
 import com.liyanfei.util.*;
+import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidElement;
 import org.apache.log4j.Logger;
-import org.checkerframework.checker.units.qual.A;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.NoSuchElementException;
-import java.util.Set;
+import org.openqa.selenium.NoSuchElementException;
 
 public class testShare extends BaseActivity {
     public static Logger logger = Logger.getLogger(testShare.class.getName());
@@ -21,14 +21,13 @@ public class testShare extends BaseActivity {
     public static String data;
     public static boolean testResult; // 测试用例执行结果
 
-
     public static AndroidElement element;
     public static Actions actions;
     public static Method method[];
 
 
     @Test
-    public void shareTest() throws Exception {
+    public void keyWordTest() throws Exception {
         try {
             // 测试用例数据文件路径
             DataFromExcel.readExcel(Settings.testCaseFile.dir, Settings.testCaseFile.file);
@@ -55,22 +54,19 @@ public class testShare extends BaseActivity {
                         int testCaseStepAllNum = DataFromExcel.getAllRowNum(testCaseName);
                         logger.info("测试用例: " + testCaseName + ", 总测试步骤数为: " + testCaseStepAllNum);
 
+                        // 每个测试用例执行前均需重置应用
+                        driver.startActivity(new Activity(Settings.LeShi.appPackage, Settings.LeShi.appActivity));
                         runEachTestCase(testCaseName, testCaseStepAllNum);
 
                         if (testResult == true) {
                             logger.info("测试用例: " + testCaseName + " 执行成功！");
-                            DataFromExcel.setCellData(Settings.testCaseFile.dir, Settings.testCaseFile.file, testCaseName,
-                                    testCaseNum, Settings.testCaseSchedule.result, true);
-                        } else {
-                            logger.info("测试用例: " + testCaseName + " 执行失败！");
-                            DataFromExcel.setCellData(Settings.testCaseFile.dir, Settings.testCaseFile.file,
-                                    Settings.testCaseSchedule.sheetName, testCaseNum,
-                                    Settings.testCaseSchedule.result, false);
                         }
                     } catch (Exception e) {
+                        logger.info("测试用例: " + testCaseName + " 执行失败！");
+                    } finally {
                         DataFromExcel.setCellData(Settings.testCaseFile.dir, Settings.testCaseFile.file,
                                 Settings.testCaseSchedule.sheetName, testCaseNum,
-                                Settings.testCaseSchedule.result, false);
+                                Settings.testCaseSchedule.result, testResult);
                     }
 
                 } else {
@@ -78,12 +74,13 @@ public class testShare extends BaseActivity {
                 }
             }
         } catch (Exception e) {
-//            e.printStackTrace();
+            e.printStackTrace();
         } finally {
             // 关闭文件
             DataFromExcel.closeExcel();
         }
     }
+
 
     // 运行单个测试用例
     public void runEachTestCase(String testCaseName, int testCaseStepAllNum) throws Exception {
@@ -104,7 +101,6 @@ public class testShare extends BaseActivity {
             // 元素操作方式
             actionStep = DataFromExcel.getCellData(testCaseName, testCaseStep,
                     Settings.testCase.actionStep);
-            System.out.println(actionStep.toLowerCase());
             // 元素数据
             data = DataFromExcel.getCellData(testCaseName, testCaseStep,
                     Settings.testCase.data);
@@ -116,53 +112,62 @@ public class testShare extends BaseActivity {
                     element = FindElement.findElementByType(getDriver(), locatedType, inspector);
                     // 执行测试步骤中给定的元素执行方式
                 } catch (NoSuchElementException e) {  // 未找到需要的控件
+//                    e.printStackTrace();
                     testResult = false;
+                    // 测试步骤Sheet
+                    DataFromExcel.setCellData(Settings.testCaseFile.dir, Settings.testCaseFile.file, testCaseName,
+                            testCaseStep, Settings.testCase.result, testResult);
                 }
             }
 
-            executeAction(testCaseName, testCaseStep);
+            // 若查找元素便失败，则无需执行方法
+            if (testResult) {
+                try {
+                    executeAction(testCaseName, testCaseStep);
+                    logger.info("测试步骤: " + testStepDetail  + " 成功！");
+                } catch (Exception e) {
+//                    e.printStackTrace();
+                    testResult = false;
+                    logger.info("测试步骤: " + testStepDetail  + " 失败！");
+                }
+            }
 
-            // 测试步骤失败/成功
+            // 测试步骤失败/成功，退出后续测试步骤
             if (testResult == false) {
                 logger.info("测试步骤: " + testStepDetail + " 失败，导致整个测试用例失败，停止测试！");
-                Assert.fail("测试步骤失败！导致整个测试用例失败！");
+//                Assert.fail("测试步骤失败！导致整个测试用例失败！");
                 break;
-            } else {
-                logger.info("测试步骤: " + testStepDetail  + " 成功！");
             }
         }
     }
 
-    public void executeAction(String testCaseName, int testCaseStep) {
+
+    public void executeAction(String testCaseName, int testCaseStep) throws Exception {
         actions = new Actions(getDriver());
         method = actions.getClass().getMethods();   // 反射的参数写法可以优化
-        try {
-            for (int i = 0; i < method.length; i++) {
-                // 找到需要执行的方法，执行
-                // 安卓 确认搜索
-                if (method[i].getName().toLowerCase().equals(actionStep.toLowerCase())
-                        || actionStep.toLowerCase().equals("enter")) {
-                    try {
-                        if (actionStep.toLowerCase().equals("enter")) {
-                            Actions.pressEnter(getDriver(), element);
-                        } else {
-                            method[i].invoke(actions, element, data);
-                        }
-                        logger.info("测试步骤执行成功");
-                        DataFromExcel.setCellData(Settings.testCaseFile.dir, Settings.testCaseFile.file, testCaseName,
-                                testCaseStep, Settings.testCase.result, true);
-                        break;
-                    } catch (ActionExpection ae) {
-                        testResult = false;
-                        logger.info("测试步骤执行失败");
-                        DataFromExcel.setCellData(Settings.testCaseFile.dir, Settings.testCaseFile.file, testCaseName,
-                                testCaseStep, Settings.testCase.result, false);
+        for (int i = 0; i < method.length; i++) {
+            // 找到需要执行的方法，执行
+            // 安卓 确认搜索
+            if (method[i].getName().toLowerCase().equals(actionStep.toLowerCase())
+                    || actionStep.toLowerCase().equals("enter")) {
+                try {
+                    if (actionStep.toLowerCase().equals("enter")) {
+                        Actions.pressEnter(getDriver(), element);
+                    } else {
+                        method[i].invoke(actions, element, data);
                     }
+//                    logger.info("测试步骤执行成功");
+                } catch (InvocationTargetException e) {
+                    testResult = false;
+                    throw new Exception("测试步骤执行失败");
+//                    logger.info("测试步骤执行失败");
+                }
+                finally {
+                    DataFromExcel.setCellData(Settings.testCaseFile.dir, Settings.testCaseFile.file, testCaseName,
+                            testCaseStep, Settings.testCase.result, testResult);
+                    break;
                 }
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
-
 }
