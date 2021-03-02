@@ -172,6 +172,7 @@ public class Actions {
                 throw new ActionExpection("验证错误");
             }
         } catch (Exception e) {
+//            e.printStackTrace();
             throw new ActionExpection("验证发生异常");
         }
 //        return false;

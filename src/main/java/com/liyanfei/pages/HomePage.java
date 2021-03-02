@@ -1,5 +1,7 @@
 package com.liyanfei.pages;
 
+import com.liyanfei.util.ActionExpection;
+import com.liyanfei.util.Actions;
 import com.liyanfei.util.FindElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -28,13 +30,21 @@ public class HomePage {
         return new LoginPage(driver);
     }
 
-    public CommodityPage searchShop(String commodityName) {
+    public CommodityPage searchCommodity(String commodityName) {
         logger.info("搜索商品");
         element = FindElement.findElementByType(driver, "id",
                 "com.netease.yanxuan:id/iv_home_search_icon");
         element.click();
+        element = FindElement.findElementByType(driver, "id",
+                "com.netease.yanxuan:id/search_input");
         element.clear();
         element.sendKeys(commodityName);
+        try {
+            // 模拟Android回车
+            Actions.pressEnter(driver, element);
+        } catch (ActionExpection e) {
+            e.printStackTrace();
+        }
         return new CommodityPage(driver);
     }
 }

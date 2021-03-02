@@ -133,12 +133,12 @@ public class FindElement {
      * @return 元素控件
      */
     public static AndroidElement WaitMostSeconds(AndroidDriver<?> driver, By by) {
-        WebDriverWait AppiumDriverWait = new WebDriverWait(driver, Settings.elementControl.elementWaitTime);
         try {
+            WebDriverWait AppiumDriverWait = new WebDriverWait(driver, Settings.elementControl.elementWaitTime);
             return (AndroidElement) AppiumDriverWait.until(ExpectedConditions
                     .presenceOfElementLocated(by));
         } catch (Exception e) {
-//            e.printStackTrace();
+            e.printStackTrace();
         }
         throw new NoSuchElementException("元素控件未出现");
     }

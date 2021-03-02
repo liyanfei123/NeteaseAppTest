@@ -6,6 +6,8 @@ import com.liyanfei.util.FindElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import org.apache.log4j.Logger;
+import org.checkerframework.checker.units.qual.A;
+import org.openqa.selenium.By;
 
 import javax.swing.*;
 import java.util.HashMap;
@@ -18,7 +20,7 @@ public class LoginPage {
         this.driver = driver;
     }
 
-    public void changeLoginWay(AndroidDriver<AndroidElement> driver) throws ActionExpection {
+    public void changeLoginWay() throws ActionExpection {
         // 切换登陆方式
         AndroidElement changeElement = FindElement.findElementByType(driver, "Id",
                 "com.netease.yanxuan:id/btn_change_mode");
@@ -34,13 +36,13 @@ public class LoginPage {
         AndroidElement passwordElement = FindElement.findElementByType(driver, "Id",
                 "com.netease.yanxuan:id/password_edit");
         Actions.input(passwordElement, password);
+    }
+
+    public UserPage clickLogin() throws ActionExpection {
         // 勾选 同意 条款
         AndroidElement boxElement = FindElement.findElementByType(driver, "Id",
                 "com.netease.yanxuan:id/check_box");
         Actions.click(boxElement, null);
-    }
-
-    public UserPage clickLogin() throws ActionExpection {
         // 点击登陆
         AndroidElement loginButton = FindElement.findElementByType(driver, "Id",
                 "com.netease.yanxuan:id/btn_login_content");
@@ -57,7 +59,8 @@ public class LoginPage {
      */
     public boolean verfiyFail(AndroidDriver<AndroidElement> driver, String expected) {
         try {
-            Actions.toastVerfity(null, expected);
+            Actions actions = new Actions(driver);
+            actions.toastVerfity(null, expected);
             return true;
         } catch (ActionExpection e) {
             return false;

@@ -3,6 +3,7 @@ package com.liyanfei.test;
 import com.liyanfei.base.BaseActivity;
 import com.liyanfei.pages.HomePage;
 import com.liyanfei.pages.LoginPage;
+import com.liyanfei.pages.UserPage;
 import com.liyanfei.util.ActionExpection;
 import com.liyanfei.util.Actions;
 import com.liyanfei.util.DataFromExcel;
@@ -28,13 +29,14 @@ public class testLogin extends BaseActivity {
         logger.info("单击个人，进入用户登陆页面");
         LoginPage loginPage = homePage.loginPage();
         logger.info("切换为 使用密码登陆");
-        loginPage.changeLoginWay(getDriver());
+        loginPage.changeLoginWay();
         logger.info("输入手机:" + data.get("telephone") + ", 和密码:" + data.get("password"));
         loginPage.inputInfo(data.get("telephone"), data.get("password"));
         // 由于Toast框显示有时间限制，故尝试三次判断
         boolean flag = false;
         for (int i = 0; i < 3; i++) {
             try {
+                logger.info("点击登陆");
                 loginPage.clickLogin();
                 flag = loginPage.verfiyFail(getDriver(), data.get("expected"));
                 if (flag) {
