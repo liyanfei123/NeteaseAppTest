@@ -19,24 +19,29 @@ public class HomePage {
     }
 
     /**
-     * 单击个人，进入用户登陆界面
+     * 主页: 在未登录的情况下，单击 个人，进入用户登陆界面
      * @return
      */
     public LoginPage loginPage() {
         logger.info("从主页进入用户登陆页");
-        element = FindElement.findElementByType(driver, "Xpath",
-                "//android.widget.TabWidget/android.view.ViewGroup[5]");
+        element = FindElement.findElementByType(driver,
+                "xpath", "//android.widget.TabWidget/android.view.ViewGroup[5]");
         element.click();
         return new LoginPage(driver);
     }
 
+    /**
+     * 主页: 在搜索栏中输入待搜索待文本，并确认搜索
+     * @param commodityName 待搜索的商品名
+     * @return
+     */
     public CommodityPage searchCommodity(String commodityName) {
         logger.info("搜索商品");
-        element = FindElement.findElementByType(driver, "id",
-                "com.netease.yanxuan:id/iv_home_search_icon");
+        element = FindElement.findElementByType(driver,
+                "id", "com.netease.yanxuan:id/iv_home_search_icon");
         element.click();
-        element = FindElement.findElementByType(driver, "id",
-                "com.netease.yanxuan:id/search_input");
+        element = FindElement.findElementByType(driver,
+                "id", "com.netease.yanxuan:id/search_input");
         element.clear();
         element.sendKeys(commodityName);
         try {

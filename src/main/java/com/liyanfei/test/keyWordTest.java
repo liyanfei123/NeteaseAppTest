@@ -24,7 +24,10 @@ public class keyWordTest extends BaseActivity {
     public static Actions actions;
     public static Method method[];
 
-
+    /**
+     * 根据测试用例文件中给定的测试用例及步骤进行测试
+     * @throws Exception
+     */
     @Test
     public void keyWordTest() throws Exception {
         try {
@@ -81,7 +84,12 @@ public class keyWordTest extends BaseActivity {
     }
 
 
-    // 运行单个测试用例
+    /**
+     * 运行文件中的单个测试用例
+     * @param testCaseName 测试用例名称
+     * @param testCaseStepAllNum 测试用例中的总步骤数
+     * @throws Exception
+     */
     public void runEachTestCase(String testCaseName, int testCaseStepAllNum) throws Exception {
         // 逐个运行测试步骤
         // 识别元素
@@ -141,6 +149,12 @@ public class keyWordTest extends BaseActivity {
     }
 
 
+    /**
+     * 找到当前测试步骤需要执行的方法进行执行
+     * @param testCaseName 测试用例名称
+     * @param testCaseStep 测试用例步骤
+     * @throws Exception
+     */
     public void executeAction(String testCaseName, int testCaseStep) throws Exception {
         actions = new Actions(getDriver());
         method = actions.getClass().getMethods();   // 反射的参数写法可以优化

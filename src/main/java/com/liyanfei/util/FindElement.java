@@ -31,6 +31,7 @@ public class FindElement {
         AndroidElement element;
         locatedType = locatedType.toLowerCase();
         try {
+            // 根据传入的定位方式，选择调用不同的定位方法
             switch (locatedType) {
                 case "id":
                     element = WaitMostSeconds(driver, By.id(locatedInfo));

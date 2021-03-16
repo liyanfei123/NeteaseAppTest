@@ -20,8 +20,12 @@ import java.util.HashMap;
  * 验证登陆账号格式等
  */
 public class testLogin extends BaseActivity {
-    public static Actions actions;
 
+    /**
+     * 对不同的手机号和密码进行登陆测试，判断失败提示信息是否如期显示
+     * @param data 数据集合，包含手机号、密码、期望的错误提示信息
+     * @throws Exception
+     */
     @Test(dataProvider = "loginData")
     public void loginTest(HashMap<String, String> data) throws Exception {
         logger.info("初始化主页面");

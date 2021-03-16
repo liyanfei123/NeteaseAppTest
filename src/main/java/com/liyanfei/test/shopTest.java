@@ -12,6 +12,13 @@ import org.testng.annotations.Test;
 
 public class shopTest extends BaseActivity {
 
+    /**
+     * 在未登陆的情况下进行购物车加购测试
+     * @param commodityName 商品名称
+     * @param telephone 登陆手机号码
+     * @param password 登陆密码
+     * @throws Exception
+     */
     @Test(dataProvider = "shopData")
     public void addShop(String commodityName, String telephone, String password) throws Exception {
         // 未登陆的情况下
@@ -54,7 +61,7 @@ public class shopTest extends BaseActivity {
     @DataProvider(name = "shopData")
     public Object[][] shopData() {
         return new Object[][] {
-                {"黑猪肉香肠", "15806284945", "710662952lyf"}
+                {"黑猪肉香肠", "xx", "xx"}
         };
     }
 }

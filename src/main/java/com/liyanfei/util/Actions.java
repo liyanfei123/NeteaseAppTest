@@ -8,9 +8,7 @@ import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.apache.log4j.Logger;
-import org.checkerframework.checker.units.qual.A;
 
-import javax.swing.*;
 import java.time.Duration;
 
 public class Actions {
@@ -63,6 +61,7 @@ public class Actions {
         }
     }
 
+
     /**
      * 向指定的元素中输入文本
      * @param element 元素
@@ -78,6 +77,7 @@ public class Actions {
             throw new ActionExpection("文本输入发生错误");
         }
     }
+
 
     /**
      * 实现滑动操作
@@ -118,6 +118,12 @@ public class Actions {
     }
 
 
+    /**
+     * 暂停操作
+     * @param element 无实际意义
+     * @param data 暂停时间
+     * @throws ActionExpection
+     */
     public static void sleep(AndroidElement element, String data) throws ActionExpection {
         try {
             Thread.sleep(3 * 1000);
@@ -129,7 +135,7 @@ public class Actions {
     /**
      * 根据给定的文本验证当前元素是否为所需要的元素
      * @param element 待判断元素
-     * @param data 判断文本
+     * @param data 期望文本
      */
     public static void testVerfiy(AndroidElement element, String data) throws ActionExpection{
         try {
@@ -144,6 +150,13 @@ public class Actions {
         }
     }
 
+
+    /**
+     * 验证控件元素是否被选中
+     * @param element 待判断的元素
+     * @param data 期望结果
+     * @throws ActionExpection
+     */
     public static void selectedVerfity(AndroidElement element, String data) throws ActionExpection{
         try {
             boolean flag = Boolean.valueOf(data).booleanValue();
@@ -158,7 +171,7 @@ public class Actions {
 
     /**
      * Toast消息验证
-     * @param element 控件元素，无实际意义，为代码的完整性
+     * @param element 无实际意义
      * @param data 验证文本
      * @return
      */
@@ -175,12 +188,12 @@ public class Actions {
 //            e.printStackTrace();
             throw new ActionExpection("验证发生异常");
         }
-//        return false;
     }
 
 
     /**
      * 判断app跳转是否成功，通过activity来判断
+     * @param data 驱动
      * @param data 期望的activity
      * @return
      * @throws InterruptedException
@@ -209,8 +222,10 @@ public class Actions {
     }
 
     /**
-     * 模拟按下确认搜索等
-     * @throws Exception
+     * 模拟Android的回车操作，如确认搜索
+     * @param driver 驱动
+     * @param element 待确认的元素
+     * @throws ActionExpection
      */
     public static void pressEnter(AndroidDriver<AndroidElement> driver, AndroidElement element) throws ActionExpection {
         try {
